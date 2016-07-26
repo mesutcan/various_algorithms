@@ -3,10 +3,10 @@
 def merge_sort(arr)
   return arr if arr.length == 1
   middle = arr.length / 2	
-  concat(merge_sort(arr[0...middle]), merge_sort(arr[middle..-1]))
+  merge(merge_sort(arr[0...middle]), merge_sort(arr[middle..-1]))
 end 
 
-def concat(left, right)
+def merge(left, right)
   result = []
   until left.length == 0 || right.length == 0 do
     result << (left.first <= right.first ? left.shift : right.shift)
